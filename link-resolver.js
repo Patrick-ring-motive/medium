@@ -2,18 +2,11 @@
 void async function LinkResolver(){
   if(globalThis.LinkResolver){console.log('Link Resolver already running');return;}
   globalThis.LinkResolver = 'starting';
-  if(!globalThis.declare){
-    await import(`https://patrick-ring-motive.github.io/framework/framework.js?${new Date().getTime()}`);
-  }
+  globalThis.declare??await import(`https://patrick-ring-motive.github.io/framework/framework.js?${new Date().getTime()}`);
   //await DOMInteractive();
-  if(!globalThis.hostTargetList){
-      globalThis.hostTargetList = ['www.google.com'];  
-  }
-  if(location.href.includes('typhon')){
-	  hostTargetList.push('typhon.com');
-	  hostTargetList.push('www.typhone.net');
-  }  
+  globalThis.hostTargetList ??= ['www.google.com'];  
   
+ 
   console.log('Link Resolver started');   
   globalThis.LinkResolver = 'running';
     resolveAll();
