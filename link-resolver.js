@@ -4,7 +4,7 @@ void async function LinkResolver(){
   globalThis.LinkResolver = 'starting';
   globalThis.declare??await import(`https://patrick-ring-motive.github.io/framework/framework.js?${new Date().getTime()}`);
   //await DOMInteractive();
-  globalThis.hostTargetList ??= ['www.google.com'];  
+  globalThis.hostTargetList ??= ['medium.com'];  
   
  
   console.log('Link Resolver started');   
